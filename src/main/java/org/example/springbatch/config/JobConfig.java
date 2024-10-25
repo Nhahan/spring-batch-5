@@ -73,7 +73,7 @@ public class JobConfig {
     @Bean
     public Step step1(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
         return new StepBuilder("sequentialStep1", jobRepository)
-                .<Customer, Customer>chunk(1000, transactionManager)
+                .<Customer, Customer>chunk(100, transactionManager)
                 .reader(customerReader1())
                 .processor(customerProcessor)
                 .writer(customerWriter())
@@ -83,7 +83,7 @@ public class JobConfig {
     @Bean
     public Step step2(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
         return new StepBuilder("sequentialStep2", jobRepository)
-                .<Customer, Customer>chunk(1000, transactionManager)
+                .<Customer, Customer>chunk(100, transactionManager)
                 .reader(customerReader2())
                 .processor(customerProcessor)
                 .writer(customerWriter())
@@ -93,7 +93,7 @@ public class JobConfig {
     @Bean
     public Step step3(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
         return new StepBuilder("parallelStep1", jobRepository)
-                .<Customer, Customer>chunk(1000, transactionManager)
+                .<Customer, Customer>chunk(100, transactionManager)
                 .reader(customerReader3())
                 .processor(customerProcessor)
                 .writer(customerWriter())
@@ -103,7 +103,7 @@ public class JobConfig {
     @Bean
     public Step step4(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
         return new StepBuilder("parallelStep2", jobRepository)
-                .<Customer, Customer>chunk(1000, transactionManager)
+                .<Customer, Customer>chunk(100, transactionManager)
                 .reader(customerReader4())
                 .processor(customerProcessor)
                 .writer(customerWriter())
