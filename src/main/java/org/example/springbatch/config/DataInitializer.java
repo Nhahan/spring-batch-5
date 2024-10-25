@@ -24,7 +24,7 @@ public class DataInitializer {
             int numThreads = 10;
             int batchSize = 10000;
             ExecutorService executor = Executors.newFixedThreadPool(numThreads);
-            System.out.println("데이터 생성 시작. 데이터 개수: " + numThreads * batchSize);
+            log.info("데이터 생성 시작. 데이터 개수: " + numThreads * batchSize);
             for (int i = 0; i < numThreads; i++) {
                 final int start = i * batchSize;
                 executor.submit(() -> {
@@ -42,9 +42,9 @@ public class DataInitializer {
             } catch (InterruptedException e) {
                 log.error("데이터 생성 실패", e);
             }
-            System.out.println("초기 데이터 생성 완료");
+            log.info("초기 데이터 생성 완료");
         }
         count = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM CUSTOMER", Long.class);
-        System.out.println("데이터 개수: " + count);
+        log.info("데이터 개수: " + count);
     }
 }
