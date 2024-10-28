@@ -1,4 +1,4 @@
-package org.example.springbatch.config;
+package org.example.springbatch.batch.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.context.annotation.Bean;

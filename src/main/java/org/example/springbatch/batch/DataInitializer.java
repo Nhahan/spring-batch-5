@@ -1,4 +1,4 @@
-package org.example.springbatch.config;
+package org.example.springbatch.batch;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;

@@ -1,8 +1,8 @@
-package org.example.springbatch.config;
+package org.example.springbatch.batch.config;
 
 import jakarta.persistence.EntityManagerFactory;
-import org.example.springbatch.batch.CustomerProcessor;
-import org.example.springbatch.batch.JobListener;
+import org.example.springbatch.batch.processor.CustomerProcessor;
+import org.example.springbatch.batch.listener.JobListener;
 import org.example.springbatch.entity.Customer;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

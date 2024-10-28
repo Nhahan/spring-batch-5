@@ -1,4 +1,4 @@
-package org.example.springbatch.batch;
+package org.example.springbatch.batch.listener;
 
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;

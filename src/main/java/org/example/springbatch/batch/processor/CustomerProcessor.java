@@ -1,4 +1,4 @@
-package org.example.springbatch.batch;
+package org.example.springbatch.batch.processor;
 
 import org.example.springbatch.entity.Customer;
 import org.springframework.batch.item.ItemProcessor;
